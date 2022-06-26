@@ -45,22 +45,10 @@
     <span>NGÀY SINH: </span><span style="color: red; font-weight: bold;" id="ngaysinh"></span><br>
     <span>UID: </span><span style="color: rgb(31, 48, 44); font-weight: bold;" id="ida"></span><br>
     <span>CHỨC VỤ TRONG LỚP: </span><span></span><br>
-    <button onclick="my()" class="btn btn-primary">ĐỔI TÊN CÁ NHÂN</button>
+    <div id="rename"></div>
     <br>
-    <script>
-    function my() {
-    document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    var cookies = document.cookie.split(";");
-
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
-    location.reload(); 
-    }
-    </script>
-
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+      <p>©9A3WEBDEV-GROUP</p>
+    </div>
  </body>
  </html>

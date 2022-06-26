@@ -4,14 +4,44 @@
      <meta charset="utf-8">
     <script src="https://9a3libscript.glitch.me/2userlib.js"></script>
     <title>TÀI KHOẢN-ĐĂNG NHẬP</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      input[type=text]{
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+      .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 70%;
+        opacity: 0.9;
+      }
+      .registerbtn:hover {
+        opacity: 1;
+      }
+      
+      </style>
  </head>    
  <body>
-    <script>
-      var delayInMilliseconds = 1000;
-      setTimeout(function() {
-      window.open("/auth/", "_self");
-   }, delayInMilliseconds);
-    </script>
-        
+<div class="container">
+    <h1 style="text-align:center">Đăng Nhập</h1>
+    <p style="text-align:center">Nhập tên thật hoặc số thứ tự trong lớp của bạn</p>
+    <hr>
+    <input type="text" placeholder="SỐ THỨ TỰ HOẶC TÊN THẬT : VÍ DỤ: 01 HOẶC Nguyễn Tấn Bình An" id="loginname" required>
+    <div style="text-align:center"><button class="registerbtn" onclick="LoginUC()">TIẾP TỤC</button></div>
+  </div>
  </body>
 </html>
