@@ -1,1 +1,75 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>RealTime Chatting</title>
+<style> 
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+</style>
+<style> 
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 1.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input:focus {
+  border: 3px solid #555;
+}
+</style>
+</head>
+<body>
+
+<div>
+<div><input id=input placeholder="Nhắn Vào Đây" /></div>
+<hr>
+<div id=box></div>
+    <p>
+      đầu ra⬆
+    </p>
+<script src=https://api.8a3thsp.cf/data/chat-data/pubnub.4.28.2.min.js></script>
+<script> (function() {
+        var pubnub = new PubNub({
+            publishKey: 'demo',
+            subscribeKey: 'demo'
+        });
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var box = $('box'),
+            name = $('name')
+            input = $('input'),
+            channel = '10chat-chatbox';
+        pubnub.addListener({
+            message: function(obj) {
+                box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML 
+            }
+        });
+        pubnub.subscribe({
+            channels: [channel]
+        });
+        input.addEventListener('keyup', function(e) {
+            if ((e.keyCode || e.charCode) === 13) {
+                pubnub.publish({
+                    channel: channel,
+                    message: input.value,
+                    x: (input.value = '')
+                });
+            }
+        });
+    })();
+</script>
+</div>
+<div><p>VER:1.0</p></div>
+  </body>
