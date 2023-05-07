@@ -21,5 +21,5 @@ cls
                 
 echo             9A3 THỰC HÀNH SƯ PHẠM
 echo            THE WEBSITE OF 9A3 CLASS
-            
+PAUSE            
         
